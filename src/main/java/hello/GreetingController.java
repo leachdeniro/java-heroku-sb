@@ -18,6 +18,6 @@ public class GreetingController {
     @RequestMapping(value = "/convertir", method = RequestMethod.POST)
     public Persona convertir(@RequestBody Persona persona) {
         System.out.println("nombre: " + persona.getNombre() + " ; apellido: " + persona.getApellido());
-        return new Persona(persona.getNombre().toUpperCase(),persona.getApellido().toUpperCase() + " un cambio más");
+        return new Persona(persona.getNombre().toUpperCase(),persona.getApellido().toUpperCase() + " un cambio menos");
     }
 }
