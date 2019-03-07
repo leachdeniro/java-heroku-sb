@@ -15,9 +15,15 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                 String.format(template, name));
     }
+
     @RequestMapping(value = "/convertir", method = RequestMethod.POST)
     public Persona convertir(@RequestBody Persona persona) {
         System.out.println("nombre: " + persona.getNombre() + " ; apellido: " + persona.getApellido());
         return new Persona(persona.getNombre().toUpperCase() + " también en nombre",persona.getApellido().toUpperCase() + " un cambio menos");
+    }
+
+    @RequestMapping(value = "/mismo", method = RequestMethod.POST)
+    public Persona mismo(@RequestBody Persona persona) {
+        return persona;
     }
 }
